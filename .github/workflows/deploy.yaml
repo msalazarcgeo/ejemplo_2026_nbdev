@@ -22,7 +22,8 @@ jobs:
           pip install -Uq setuptools
           pip install -Uq scikit-learn
           pip install -Uq shapely
-          nbdev_docs
+          nbdev_test
+	  nbdev_docs
 #          pip install -e ".[dev]"
          
       - name: Deploy to GitHub Pages
