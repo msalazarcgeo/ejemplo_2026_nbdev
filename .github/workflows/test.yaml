@@ -10,24 +10,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - name: Test with nbdev
-      - env:
-          USE_PRE: ${{ inputs.pre }}
-          OBJC_DISABLE_INITIALIZE_FORK_SAFETY: YES
-          SKIP_TEST: ${{ inputs.skip_test }}
-          FLAGS: ${{ inputs.flags }}
-          TORCH_CPU: ${{ inputs.torch_cpu }}
-          STRIP: ${{ inputs.strip }}
         shell: bash
         run: |
-          set -ux
-          python -m pip install --upgrade pip
-          if [ $USE_PRE ]; then
-            pip install -U git+https://github.com/fastai/fastcore.git
-            pip install -U git+https://github.com/fastai/ghapi.git
-            pip install -U git+https://github.com/fastai/execnb.git
-            pip install -U git+https://github.com/fastai/nbdev.git
-          else
-            pip install -U "nbdev>=3"
-          fi
-          nbdev-export
+            set -ux
+            python -m pip install --upgrade pip
+            if [ $USE_PRE ]; then
+              pip install -U git+https://github.com/fastai/fastcore.git
+              pip install -U git+https://github.com/fastai/ghapi.git
+              pip install -U git+https://github.com/fastai/execnb.git
+              pip install -U git+https://github.com/fastai/nbdev.git
+            else
+              pip install -U "nbdev>=3"
+            fi
+            nbdev-export
+ 
  
