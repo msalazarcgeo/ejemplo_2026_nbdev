@@ -12,4 +12,4 @@
     pip install -Uq setuptools
     pip install -Uq scikit-learn
     pip install -Uq shapely
-    nbdev_docs
+    nbdev_test
