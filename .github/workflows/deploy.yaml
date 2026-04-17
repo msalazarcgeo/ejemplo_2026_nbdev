@@ -23,7 +23,8 @@ jobs:
           pip install -Uq scikit-learn
           pip install -Uq shapely
           nbdev_test
-	  nbdev_docs
+          nbdev_docs
+       
 #          pip install -e ".[dev]"
          
       - name: Deploy to GitHub Pages
@@ -35,4 +36,3 @@ jobs:
           # The following lines assign commit authorship to the official GH-Actions bot for deploys to `gh-pages` branch.
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
