@@ -22,8 +22,12 @@ jobs:
             set -ux
             python -m pip install --upgrade pip
             pip install -U "nbdev>=3"
-            pip install -U matplotlib
-            nbdev-test
+            if [[ `git status --porcelain -uno` ]]; then
+              git diff
+              echo "git status is not clean"
+              false
+            fi
+            nbdev-export
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
