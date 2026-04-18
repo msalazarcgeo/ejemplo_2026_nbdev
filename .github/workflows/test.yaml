@@ -15,7 +15,11 @@ jobs:
             set -ux
             python -m pip install --upgrade pip
             pip install -U "nbdev>=3"
-            ls
-            nbdev_export
+            if [[ `git status --porcelain -uno` ]]; then
+              git diff
+              echo "git status is not clean"
+              false
+            fi
+            nbdev-export
  
  
