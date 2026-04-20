@@ -17,6 +17,7 @@ jobs:
             pip install -U "nbdev>=3"
             pip install -U matplotlib
             pip install -U scikit-learn
+            pip install -U shapely
             if [[ `git status --porcelain -uno` ]]; then
               git diff
               echo "git status is not clean"
