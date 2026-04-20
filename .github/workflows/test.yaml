@@ -15,6 +15,7 @@ jobs:
             set -ux
             python -m pip install --upgrade pip
             pip install -U "nbdev>=3"
+            pip install -U matplotlib
             if [[ `git status --porcelain -uno` ]]; then
               git diff
               echo "git status is not clean"
