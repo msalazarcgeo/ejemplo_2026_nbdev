@@ -20,6 +20,6 @@ jobs:
               echo "git status is not clean"
               false
             fi
-            nbdev-export
+            nbdev-test
  
  
